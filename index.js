@@ -1,3 +1,15 @@
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 10000;
+
+app.get('/', (req, res) => {
+  res.send('Bot WhatsApp Online!');
+});
+
+app.listen(port, () => {
+  console.log(`Server attivo sulla porta ${port}`);
+});
+
 const { Client, LocalAuth, Poll } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const cron = require('node-cron');
